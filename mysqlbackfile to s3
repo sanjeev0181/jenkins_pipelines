@@ -1,0 +1,27 @@
+node {
+    stage("mysqkbackup") 
+    {
+        sh 'sudo mysqldump -u root -paditya98482@   mysql > /opt/backup.sql'
+    }
+    stage("artifacts to s3") 
+    {
+        withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'deploytos3', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) 
+        {
+            sh 'aws s3 ls' 
+            sh 'aws s3 mb s3://mysqlbackupfile'
+            sh 'aws s3 cp /opt/backup.sql s3://mysqlbackupfile'
+        }
+        
+    }
+}
+
+
+plugins
+-------------------
+s3 plugins install
+
+
+
+after write charge
+
+configure system --> Amazon S3 profiles
