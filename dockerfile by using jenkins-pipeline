@@ -1,0 +1,29 @@
+node {
+    stage("github"){
+        git credentialsId: 'github', url: 'https://github.com/sanjeev0181/war.git'
+    }
+    stage("build the maven"){
+        def mvnHome = tool name: 'Maven', type: 'maven'
+        sh "mvn clean package"
+    }
+    stage("build docker images"){
+        sh 'docker build -t sanjeev0181/war:1.0.0 .'
+    }
+    stage('build docker push'){
+        withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
+        sh "docker login -u sanjeev0181 -p ${dockerHubPwd}"
+        }
+        sh 'docker push sanjeev0181/war:1.0.0'
+    } 
+    stage("Run container on dev server"){
+        def dockerRun = 'docker run -d -p 9090:8080  --name sanjeev0181/war:1.0.0'
+        sshagent(['deploy-dev']) {
+        sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.62.239 ${dockerRun}'
+      }
+    }
+}
+
+
+plugins
+
+docker pipeline
