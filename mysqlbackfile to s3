@@ -18,7 +18,7 @@ node {
 
 plugins
 -------------------
-s3 plugins install
+CloudBees AWS Credentials Plugin
 
 
 
