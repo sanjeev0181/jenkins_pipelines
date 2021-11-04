@@ -1,1 +1,42 @@
+Youtube like:-  https://www.youtube.com/watch?v=XE_mAhxZpwU&t=158s
+github like:- https://github.com/shazforiot/Jenkins-integration-with-kubernetes
+
+Jenkins Kubernetes Integration  step by step
+****************************************
+Create Jenkins as Docker Container.
+How to make use of same Docker machine as jenkins slave  to run.
+Docker pipeline plugins.
+Install k8 container plugins.
+Configure k8 plugin using kube config file.
+
+
+Pre-requisite:-
+*************
+Your application to be deployed in kubernetes.
+Docker file
+Kubernetes cluster
+kubernetes Deployment and service Yaml file.
+
+
+
+Step 1:-
+
+docker run -u 0 --privileged --name jenkins -it -d -p 8080:8080 -p 5000:5000 -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/usr/bin/docker -v /home/jenkins_home:/var/jenkins_home jenkins/jenkins:latest
+
+Step 2:-
+
+docker logs -f 634cb2fdefbb
+
+Step 3:-
+Install Plugins on jenkins dashboard
+
+Docker pipelines
+
+Kubernetes download reference url
+
+https://get.jenkins.io/plugins/kubernetes-cd/1.0.0/kubernetes-cd.hpi
+
+Step 4:-
+
+
 
