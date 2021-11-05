@@ -1,0 +1,5 @@
+How many ways we can create  pipeline
+--> Using Build and Delivery PiPeline Plugins
+--> Using Groovy script on the Fly (Here we use Jenkins file)
+    --> Scripted
+    --> Declarative
