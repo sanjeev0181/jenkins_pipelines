@@ -1,0 +1,53 @@
+python code example 1
+
+node {
+    stage('GitHub Repo'){
+        git branch: 'main', credentialsId: 'github', url: 'https://github.com/sanjeev0181/python-programs.git'
+    }
+    stage('Build in python'){
+        sh 'python3 swaplist.py'
+    }
+}
+
+
+version script 
+------------------
+pipeline {
+    agent any
+    tools { 
+        maven 'Maven'
+    }
+    stages {
+        stage ('Initialize') {
+            steps {
+                sh 'mvn --version'
+            }
+        }
+
+        stage ('Build') {
+            steps {
+                echo 'This is a minimal pipeline.'
+            }
+        }
+    }
+}
+
+
+when stmt
+
+pipeline {
+	agent any
+		environment {
+			DEPLOY_TO="production"
+		}
+	stages {
+		stage('Build') {
+			when {
+				environment name: 'DEPLOY_TO' , value:'production'
+			}
+		steps {
+			echo 'Deploying'
+			}
+		}
+	}
+}
