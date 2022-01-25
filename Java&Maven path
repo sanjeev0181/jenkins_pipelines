@@ -1,0 +1,11 @@
+vim /etc/profile
+
+export JAVA_HOME= paeth
+export PATH=$JAVA_HOME/bin/:$PATH
+
+export MAVEN_HOME = path
+
+
+save after
+source /etc/profile
+echo $JAVA_HOME
