@@ -5,3 +5,5 @@ like:- https://plugins.jenkins.io/role-strategy/
 https://plugins.jenkins.io/blueocean/
 
 3)Maven Integration
+4)pipeline maven integration
+https://www.jenkins.io/doc/pipeline/steps/pipeline-maven/#:~:text=Configures%20maven%20environment%20to%20use,and%20prepended%20to%20the%20path.&text=Select%20a%20global%20maven%20settings%20element%20from%20File%20Config%20Provider.
