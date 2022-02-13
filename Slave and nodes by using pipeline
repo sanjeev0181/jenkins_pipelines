@@ -1,0 +1,16 @@
+pipeline {
+    agent {label 'Slave-nodes'}
+        stages {
+            stage("git checkout"){
+                steps {
+                    git credentialsId: 'sanjeev0181', url: 'https://github.com/sanjeev0181/war.git'
+                    
+                }
+            }
+            stage("Build Maven"){
+                steps {
+                    sh 'mvn clean package'
+                }
+            }
+        }
+}
