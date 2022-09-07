@@ -1,0 +1,50 @@
+what is difference between freestyle and pipeline in jenkins?
+Freestyle :- freestyle is we can configure to throug  the UI.
+
+What is pipeline?
+A Pipeline is a user-defined model of a CD pipeline. A Pipeline’s code defines your entire build process, which typically 
+includes stages for building an application, testing it and then delivering it.
+
+
+What are Declarative pipelines?
+A declarative pipeline supports conditional statement usage, allows access to environment variables and provides facilities to add logging 
+and error handling.
+
+
+
+what is difference between declarative pipeline and script based pipeline?
+
+Declarative pipelines always begin with the word pipeline. Scripted pipelines, on the other hand, always begin with the word node. 
+Declarative pipelines break down stages into individual stages that can contain multiple steps. 
+Scripted pipelines use Groovy code and references to the Jenkins pipeline DSL within the stage elements without the need for steps.
+
+how to many we can connect the slaves?
+1 via ssh
+2.via java webstart
+3.via execute of command on the master.
+
+
+How many way we provided security for your jenkins server?
+
+Authentication
+Authorization
+Security redms
+Role based access control
+
+
+What is SonarQube?
+SonarQube is an open-source framework developed by SonarSource for continuous inspection of code quality to conduct automated reviews of 20 + programming 
+languages with static code analysis to identify bugs, code bad smells and security vulnerabilities.
+
+what types of artifactory repositories tool have you used?
+
+Apache Archiva (Open Source)
+Cloudsmith Package (Commercial)
+JFrog Artifactory (Open Source or Commercial)
+MyGet (Commercial)
+Sonatype Nexus (Open Source or Commercial)
+Mvn artifactory
+
+
+What is the use artifactory tools?
+
